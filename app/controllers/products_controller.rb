@@ -15,7 +15,8 @@ class ProductsController < ApplicationController
 	end
 
 	def create
-		product = Product.create(name: params["product"]["name"], price: params["product"]["name"])
+		product = Product.create(name: params["product"]["name"], price: params["product"]["price"])
+		params["product"]["category_ids"].each { |x| Association.create(product_id: product.id, category_id: x) if x != "" }
 		redirect_to product
 	end
 
