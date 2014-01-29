@@ -2,7 +2,7 @@
 
 <ul>
 	<% @categories.each do |c| %>
-		<li> <%= link_to c.name, category_path(c) %> <%= link_to "Delete", category_path(c), method: :delete%> </li>
+		<li> <%= link_to c.name, category_path(c) %> <%= link_to "Delete", category_path(c), method: :delete%> <%= link_to "Edit", edit_category_path(c), method: :get%> </li>
 	<% end %>
 </ul>
 

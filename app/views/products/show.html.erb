@@ -4,7 +4,9 @@
 	<li>Price: $<%=@product.price%></li>
 	<li>Categories:<br>
 		<% @categories.each do |c| %>
-		<%= c.name %><br>
+			<%= c.name %><br>
 		<% end %>
 	</li>
 </ul>
+
+<%= link_to "EDIT", edit_product_path %>

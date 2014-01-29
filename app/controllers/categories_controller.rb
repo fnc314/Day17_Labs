@@ -20,8 +20,14 @@ class CategoriesController < ApplicationController
 	end
 
 	def edit
-		id = params.require(:id)
-		@category = Category.find(id)
+		@category = Category.find(params[:id])
+	end
+
+	def update
+		category = Category.find(params[:id])
+		updated_info = params.require(:category).permit(:name)
+		category.update_attributes(updated_info)
+		redirect_to category
 	end
 
 	def destroy
