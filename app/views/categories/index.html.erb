@@ -3,13 +3,13 @@
 <table class="table table-hover">
 
 	<th class="tablelabel">Category Name</th>
-	<!-- <th class="tablelabel">Products</th> -->
+	<th class="tablelabel">Products</th>
 	<th class="tablelabel"></th>
 
 	<% @categories.each do |c| %>
 		<tr>
 			<td class="categoryinfo"> <%= link_to c.name, category_path(c) %> </td>
-			<!-- <td class="categoryinfo"> <%= c.products.each { |x| x } %> </td> -->
+			<td class="categoryinfo"> <% c.products.each do |x| %> <%= x.name %><br> <% end %> </td>
 			<td class="productinfo"> <%= link_to "Edit", edit_category_path(c) %> </td>
 		</tr>
 	<% end %>

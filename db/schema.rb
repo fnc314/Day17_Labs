@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140129004642) do
+ActiveRecord::Schema.define(version: 20140129181341) do
 
   create_table "associations", force: true do |t|
     t.integer  "product_id"
@@ -25,6 +25,12 @@ ActiveRecord::Schema.define(version: 20140129004642) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "examples", force: true do |t|
+    t.decimal  "val",        precision: 2, scale: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

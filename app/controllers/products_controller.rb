@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
 			redirect_to new_product_path
 		else
 			product = Product.create(name: params["product"]["name"], price: params["product"]["price"])
-			params["product"]["category_ids"].each { |x| Association.create(product_id: product.id, category_id: x) if x != "" }
+			params["product"]["category_ids"].each { |x| product.categories.push(Category.find(x)) if x != "" }
 			redirect_to product
 		end
 	end
