@@ -2,8 +2,8 @@
 
 <%= f.text_field :name, placeholder: "Product Name" %> <br>
 <%= f.number_field :price, step: 0.01, placeholder: "Price XX.XX" %> <br>
-<%= collection_check_boxes :product, :category_ids, Category.all, :id, :name %>
+<%= collection_check_boxes :product, :category_ids, Category.all, :id, :name %> <br>
 
-<%= f.submit %>
+<%= f.submit class: "btn btn-large" %>
 
 <% end %>

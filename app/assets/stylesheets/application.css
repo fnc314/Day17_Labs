@@ -11,3 +11,10 @@
  *= require_self
  *= require_tree .
  */
+.productinfo {
+	text-align: center;
+}
+
+.tablelabel {
+	text-align: center;
+}

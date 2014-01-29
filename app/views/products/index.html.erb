@@ -1,11 +1,19 @@
 <h1>Products</h1>
 
-<ul>
-	<% @products.each do |p| %>
-		<li> <%= link_to p.name, product_path(p) %> : $<%= p.price %> <%= link_to "Delete", product_path(p), method: :delete%> <%= link_to "Edit", edit_product_path(p) %></li>
-		<br>
-	<% end %>
-</ul>
+<table class="table table-hover">
 
-<%= link_to "Categories", categories_path %>
-<%= link_to "New Product", new_product_path %>
+	<th class="tablelabel">Product Name</th>
+	<th class="tablelabel">Price</th>
+	<!-- <th class="tablelabel">Categories</th> -->
+	<th class="tablelabel"></th>
+
+	<% @products.each do |p| %>
+		<tr>
+			<td class="productinfo"> <%= link_to p.name, product_path(p) %> </td>
+			<td class="productinfo"> $<%= p.price %> </td>
+			<!-- <td class="productinfo"> <%= p.categories.each { |x| x } %> </td> -->
+			<td class="productinfo"> <%= link_to "Edit", edit_product_path(p) %> </td>
+		</tr>
+	<% end %>
+
+</table>
