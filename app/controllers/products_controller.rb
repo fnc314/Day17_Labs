@@ -28,6 +28,7 @@ class ProductsController < ApplicationController
 		product = Product.find(params[:id])
 		updated_info = params.require(:product).permit(:name, :price)
 		product.update_attributes(updated_info)
+		product.category_ids = params["product"]["category_ids"]
 		redirect_to product
 	end
 
