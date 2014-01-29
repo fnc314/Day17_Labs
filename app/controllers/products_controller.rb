@@ -15,9 +15,14 @@ class ProductsController < ApplicationController
 	end
 
 	def create
-		product = Product.create(name: params["product"]["name"], price: params["product"]["price"])
-		params["product"]["category_ids"].each { |x| Association.create(product_id: product.id, category_id: x) if x != "" }
-		redirect_to product
+		if params["product"]["name"] == "" || params["product"]["price"] == ""
+			flash.now[:warning] = "Please Fill Out Entire Form"
+			redirect_to new_product_path
+		else
+			product = Product.create(name: params["product"]["name"], price: params["product"]["price"])
+			params["product"]["category_ids"].each { |x| Association.create(product_id: product.id, category_id: x) if x != "" }
+			redirect_to product
+		end
 	end
 
 	def edit
@@ -27,9 +32,14 @@ class ProductsController < ApplicationController
 	def update
 		product = Product.find(params[:id])
 		updated_info = params.require(:product).permit(:name, :price)
-		product.update_attributes(updated_info)
-		product.category_ids = params["product"]["category_ids"]
-		redirect_to product
+		if params["product"]["name"] == "" || params["product"]["price"] == ""
+			flash[:warning] = "Name/Price CANNOT be empty!"
+			redirect_to edit_product_path
+		else
+			product.update_attributes(updated_info)
+			product.category_ids = params["product"]["category_ids"]
+			redirect_to product
+		end
 	end
 
 	def destroy
