@@ -1,0 +1,8 @@
+<h1>Add A Category</h1>
+
+<%= form_for @category do |f| %>
+
+	<%= f.text_field :name, placeholder: "Category Name" %>
+
+<%= f.submit "Add Category" %>
+<% end %>

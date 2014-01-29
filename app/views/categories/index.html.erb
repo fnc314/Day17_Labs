@@ -1,0 +1,9 @@
+<h1>Categories</h1>
+
+<ul>
+	<% @categories.each do |c| %>
+		<li> <%= link_to c.name, category_path(c) %> <%= link_to "Delete", category_path(c), method: :delete%> </li>
+	<% end %>
+</ul>
+
+<%= link_to "All Products", products_path %>
