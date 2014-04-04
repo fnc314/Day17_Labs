@@ -1,7 +1,7 @@
 Store Management App
 ==
 
-This app is a simple Rails application utilizing a `many_to_many` relationship between two models (`Products` and `Categories`) with a through-table called `Catprod` that allows a Product to have many categories (to which it belongs) and for a Category to have many products.  This is one of the first uses of `collection_check_boxes`.
+This app is a simple Rails application utilizing a `many_to_many` relationship between two models (`Products` and `Categories`) with a through-table called `Associations` that allows a Product to have many categories (to which it belongs) and for a Category to have many products.  This is one of the first uses of `collection_check_boxes`.
 
 The following is the assignment used to build the app:
 
