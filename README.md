@@ -1,4 +1,9 @@
-Day 17 Lab -> Store Management
+Store Management App
+==
+
+This app is a simple Rails application utilizing a `many_to_many` relationship between two models (`Products` and `Categories`) with a through-table called `Catprod` that allows a Product to have many categories (to which it belongs) and for a Category to have many products.  This is one of the first uses of `collection_check_boxes`.
+
+The following is the assignment used to build the app:
 
 Your company needs an app to manage a list of products in your store. Here are the features we need:
 
@@ -30,32 +35,3 @@ BONUS: Make it pretty.
 BONUS: Add validation to your models. Try validating that a product name or category name exists before adding it to the db. Add any other validations that make sense.
 
 EXTRA BONUS: Add authentication to the site.
-
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
